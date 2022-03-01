@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import CartContainer from './Components/CartContainer';
 import { useGlobalContext } from './context';
 import Navbar from './Components/Navbar';
 
@@ -17,6 +18,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <CartContainer />
     </>
     
   );

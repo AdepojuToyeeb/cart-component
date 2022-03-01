@@ -1,10 +1,19 @@
-import React, {useContext} from "react";
+import React, {useContext, useReducer} from "react";
+import reducer from './reducer';
+import cartItems from './data'
 
 const AppContext = React.createContext()
 
+const initialState ={
+    loading: false,
+    cart: cartItems,
+    total: 0,
+    amount: 0
+}
 const AppProvider = ({children}) =>{
+    const [state, dispatch] = useReducer(reducer, initialState)
     return (
-        <AppContext.Provider value='hello'>{children}</AppContext.Provider>
+        <AppContext.Provider value={{...state}}>{children}</AppContext.Provider>
     )
 }
 
